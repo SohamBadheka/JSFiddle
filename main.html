@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript" language="javascript">
+
+
+      function go(){
+      	var a=document.getElementById('html').value;
+      	var b=document.getElementById('css').value;
+      	var c=document.getElementById('js').value;
+      	
+          $.post("two.php",
+  
+                            { html: a ,css: b,js: c},
+                
+                            function(data) {
+                                            $('#results').html(data);
+                            }
+                );
+              }
+</script>
+</head>
+<body bgcolor="grey">
+<textarea id="html" name="html"rows="10" cols="50" placeholder="Put Your Html Code Overhere!" onkeyup="go()">
+</textarea>
+
+<textarea id="css" name="css"rows="10" cols="50" placeholder="Put Your CSS code Overhere!" onkeyup="go()">
+</textarea>
+
+<textarea id="js" name="js"rows="10" cols="50" placeholder="Put Your JS Code Overhere!" onkeyup="go()">
+</textarea>
+<br><br>
+<div id="results">
+</div>
+
+<br>
+</html>
